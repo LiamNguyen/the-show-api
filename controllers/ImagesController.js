@@ -16,7 +16,7 @@ exports.GET = (req, res) => {
       );
       return res
         .status(INTERNAL_SERVER_ERROR)
-        .send(ApiError.retrieve_all_images_failed);
+        .send(error);
     }
     res.status(OK).json(images);
   });
