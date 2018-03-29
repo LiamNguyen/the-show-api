@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 exports.connect = () => {
   mongoose.connect(
-    `mongodb://${process.env.DB_HOST}/The_Show`,
+    `mongodb://${process.env.DB_HOST}/${process.env.DB_NAME}`,
     { useMongoClient: true, promiseLibrary: global.Promise }
   );
   const db = mongoose.connection;
