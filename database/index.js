@@ -1,16 +1,9 @@
 const mongoose = require('mongoose');
 
-const {
-  DB_USER,
-  DB_PASSWORD,
-  DB_HOST,
-  DB_PORT,
-  DB_NAME
-} = process.env;
-
 exports.connect = () => {
   mongoose.connect(
-    `mongodb://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/${DB_NAME}`,
+    `mongodb://${process.env.DB_USER}:${process.env.DB_PASSWORD}@
+    ${process.env.DB_HOST}:${process.env.DB_PORT}/${process.env.DB_NAME}`,
     { useMongoClient: true, promiseLibrary: global.Promise }
   );
   const db = mongoose.connection;
